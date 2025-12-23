@@ -1,1 +1,10 @@
-
+   "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "s3b009@gmail.com",
+                "paths": ["/itinerary", "/itinerary/*", "/itinerary?*"]
+            }
+        ]
+    }
+}
