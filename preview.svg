@@ -1,0 +1,48 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="200" fill="white" opacity="0.05"/>
+  <circle cx="1100" cy="530" r="250" fill="white" opacity="0.05"/>
+  <circle cx="900" cy="100" r="150" fill="white" opacity="0.03"/>
+  
+  <!-- App Icon Container -->
+  <rect x="475" y="120" width="120" height="120" rx="28" fill="url(#iconBg)"/>
+  <rect x="480" y="125" width="110" height="110" rx="24" fill="white" opacity="0.95"/>
+  
+  <!-- Compass Icon -->
+  <text x="535" y="200" font-size="60" text-anchor="middle" dominant-baseline="middle">🧭</text>
+  
+  <!-- App Name -->
+  <text x="600" y="290" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle">Journey Planner</text>
+  
+  <!-- Tagline -->
+  <text x="600" y="350" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" fill="white" opacity="0.9" text-anchor="middle">AI-Powered Travel Itinerary</text>
+  
+  <!-- Divider line -->
+  <rect x="450" y="390" width="300" height="2" fill="white" opacity="0.3" rx="1"/>
+  
+  <!-- Call to action -->
+  <rect x="400" y="430" width="400" height="60" rx="30" fill="white" opacity="0.2"/>
+  <text x="600" y="470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="600" fill="white" text-anchor="middle">Tap to Open Shared Itinerary</text>
+  
+  <!-- Travel icons decoration -->
+  <text x="150" y="500" font-size="40" opacity="0.3">✈️</text>
+  <text x="250" y="200" font-size="35" opacity="0.25">🗺️</text>
+  <text x="950" y="400" font-size="45" opacity="0.3">🏯</text>
+  <text x="1050" y="200" font-size="35" opacity="0.25">🗼</text>
+  <text x="100" y="350" font-size="30" opacity="0.2">🚗</text>
+  <text x="1000" y="550" font-size="35" opacity="0.25">🍣</text>
+</svg>
