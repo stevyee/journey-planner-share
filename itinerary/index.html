@@ -44,7 +44,6 @@
         }
         .status.loading { background: #e3f2fd; color: #1565c0; }
         .status.success { background: #e8f5e9; color: #2e7d32; }
-        .status.fallback { background: #fff3e0; color: #e65100; }
         .status.error { background: #ffebee; color: #c62828; }
         .btn {
             display: inline-block;
@@ -134,7 +133,37 @@
             
             debugEl.textContent = 'Data length: ' + data.length + ' chars';
             
-           
+            // Try to decode and show preview
+            try {
+                // URL-safe base64 decode
+                var base64 = data.replace(/-/g, '+').replace(/_/g, '/');
+                while (base64.length % 4) {
+                    base64 += '=';
+                }
+                var json = atob(base64);
+                var itinerary = JSON.parse(json);
+                
+                if (itinerary.title) {
+                    previewEl.style.display = 'block';
+                    previewEl.innerHTML = 
+                        '<h2>📍 ' + itinerary.title + '</h2>' +
+                        '<p>' + (itinerary.summary || '').substring(0, 150) + '...</p>' +
+                        '<p style="margin-top: 8px; color: #667eea;">📅 ' + 
+                        (itinerary.days ? itinerary.days.length : 0) + ' day trip</p>';
+                    
+                    statusEl.className = 'status success';
+                    statusEl.innerHTML = '✅ Trip loaded successfully!<br>Tap the button below to view in App';
+                } else {
+                    // No title - still show success but no preview
+                    statusEl.className = 'status success';
+                    statusEl.innerHTML = '✅ Ready to open in App!';
+                }
+            } catch (e) {
+                console.log('Parse error:', e);
+                // Silently fail - just show success state
+                statusEl.className = 'status success';
+                statusEl.innerHTML = '✅ Ready to open in App!';
+            }
             
             // Auto-open app after a short delay
             setTimeout(function() {
