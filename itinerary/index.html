@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journey Planner - 分享的行程</title>
+    <title>Journey Planner - shared trip</title>
     
     <!-- Open Graph meta tags for iMessage/LINE preview cards -->
-    <meta property="og:title" content="🗺️ Journey Planner 行程分享">
-    <meta property="og:description" content="點擊查看精心規劃的旅遊行程！">
+    <meta property="og:title" content="🗺️ Journey Planner Trip Sharing">
+    <meta property="og:description" content="Click to view the trip from planner!">
     <meta property="og:image" content="https://stevyee.github.io/journey-planner-share/preview.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -86,19 +86,19 @@
     <div class="container">
         <div class="logo">🗺️</div>
         <h1>Journey Planner</h1>
-        <p class="subtitle">AI 旅遊行程規劃</p>
+        <p class="subtitle">AI Trip Planning</p>
         
         <div id="itinerary-preview"></div>
         
         <div id="status" class="status loading">
-            ⏳ 正在載入行程資料...
+            ⏳ Loading trip data...
         </div>
         
-        <a href="#" id="openAppBtn" class="btn" style="display:none;">📱 在 App 中開啟</a>
+        <a href="#" id="openAppBtn" class="btn" style="display:none;">📱 Open in App</a>
         
         <div class="contact">
-            <h3>📧 需要取得 App？</h3>
-            <p>Journey Planner 目前為私人測試版本<br>請聯繫 <strong>Steven</strong> 取得安裝方式</p>
+            <h3>📧 Need the App?</h3>
+            <p>Journey Planner is currently in private testing<br>Please contact <strong>Steven</strong> for installation access</p>
         </div>
         
         <p class="footer">© 2024 Journey Planner by Steven</p>
@@ -150,15 +150,15 @@
                         '<h2>📍 ' + itinerary.title + '</h2>' +
                         '<p>' + (itinerary.summary || '').substring(0, 150) + '...</p>' +
                         '<p style="margin-top: 8px; color: #667eea;">📅 ' + 
-                        (itinerary.days ? itinerary.days.length : 0) + ' 天行程</p>';
+                        (itinerary.days ? itinerary.days.length : 0) + ' day trip</p>';
                     
                     statusEl.className = 'status success';
-                    statusEl.innerHTML = '✅ 行程載入成功！<br>點擊下方按鈕在 App 中查看';
+                    statusEl.innerHTML = '✅ Trip loaded successfully!<br>Tap the button below to view in App';
                 }
             } catch (e) {
                 console.log('Parse error:', e);
                 statusEl.className = 'status fallback';
-                statusEl.innerHTML = '⚠️ 無法解析行程預覽<br>但仍可嘗試在 App 中開啟';
+                statusEl.innerHTML = '⚠️ Unable to parse trip preview<br>But you can still try opening it in the App';
             }
             
             // Auto-open app after a short delay
@@ -170,7 +170,7 @@
         } else {
             // No data parameter
             statusEl.className = 'status error';
-            statusEl.innerHTML = '❌ 連結無效：缺少行程資料<br><small>請確認連結是否完整</small>';
+            statusEl.innerHTML = '❌ Invalid link: missing trip data<br><small>Please check if the link is complete</small>';
             openAppBtn.style.display = 'none';
             
             debugEl.textContent = 'No data parameter found. Search: ' + window.location.search.substring(0, 50);
